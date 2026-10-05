@@ -91,6 +91,18 @@
   @keyframes wobble { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
 
   p { font-size: clamp(18px, 4vw, 22px); line-height: 1.5; }
+  .dato {
+    text-align: center; margin: 20px auto; padding: 14px 10px;
+    background: #ffffff; border: 5px double #ff00ff; max-width: 480px;
+    transform: rotate(-2deg); box-shadow: 5px 5px 0 #ff9900;
+  }
+  .dato .tittel { font-size: clamp(18px, 4.5vw, 24px); font-weight: bold; color: #009900; }
+  .dato .dag { font-size: clamp(32px, 9vw, 52px); font-weight: bold; color: #ff0000; line-height: 1.1; margin: 6px 0; }
+  .dato .nedtelling { font-size: 16px; margin-top: 8px; }
+  .dato .nedtelling b {
+    font-family: "Courier New", monospace; background: #000; color: #ff3333;
+    padding: 2px 8px; border: 2px inset #808080; font-size: 20px;
+  }
   .velkommen {
     text-align: center;
     font-size: clamp(28px, 7vw, 44px);
@@ -134,7 +146,7 @@
   </div>
 
   <div class="side">
-    <marquee scrollamount="6">🎉 HURRA! 🎂 Joachim blir 40! 🎈 Velkommen til fest! 🎉 Husk: IKKE si noe til Joachim! 🤫 🎉</marquee>
+    <marquee scrollamount="6">🎉 HURRA! 🎂 Joachim blir 40! 🎈 Fest lørdag 5. juni! 🎉 Husk: IKKE si noe til Joachim! 🤫 🎉</marquee>
 
     <div class="ballonger"><span>🎈</span><span>🎈</span><span>🎂</span><span>🎈</span><span>🎈</span></div>
 
@@ -144,6 +156,12 @@
     <hr class="regnbue">
 
     <p>Det skal feires en bursdag! 🥳</p>
+
+    <div class="dato">
+      <div class="tittel">📅 Sett av datoen! 📅</div>
+      <div class="dag">Lørdag 5. juni 2027</div>
+      <div class="nedtelling" id="nedtelling"></div>
+    </div>
     <p>Har du fått denne linken, er du <b><u>invitert</u></b> på dagen!</p>
     <p>Mer informasjon kommer på denne siden – så følg med! 👀</p>
 
@@ -156,5 +174,16 @@
     <div class="teller">Du er besøkende nr. <b>000040</b></div>
     <div class="footer">joachimblir40.no · Best i Netscape Navigator 4.0 · 800×600</div>
   </div>
+<script>
+  (function () {
+    var el = document.getElementById("nedtelling");
+    var fest = new Date(2027, 5, 5);
+    var idag = new Date(); idag.setHours(0, 0, 0, 0);
+    var dager = Math.round((fest - idag) / 86400000);
+    if (dager > 1) el.innerHTML = "Bare <b>" + dager + "</b> dager igjen!";
+    else if (dager === 1) el.innerHTML = "Det er <b>i morgen</b>!";
+    else if (dager === 0) el.innerHTML = "Det er <b>i dag</b>! 🎉";
+  })();
+</script>
 </body>
 </html>
