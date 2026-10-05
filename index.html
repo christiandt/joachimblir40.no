@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Joakim blir 40!</title>
+<style>
+  @font-face { font-family: "Comic Neue"; font-weight: 400; font-display: swap; src: url(fonts/comic-neue-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Comic Neue"; font-weight: 700; font-display: swap; src: url(fonts/comic-neue-latin-700-normal.woff2) format("woff2"); }
+  :root { --comic: "Comic Sans MS", "Comic Sans", "Comic Neue", "Chalkboard SE", cursive; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--comic);
+    color: #000080;
+    background-color: #00ccff;
+    background-image:
+      radial-gradient(circle at 20px 20px, #ffff00 3px, transparent 4px),
+      radial-gradient(circle at 60px 60px, #ff66cc 3px, transparent 4px),
+      radial-gradient(circle at 60px 20px, #ffffff 2px, transparent 3px);
+    background-size: 80px 80px;
+    padding: 0 12px 40px;
+  }
+  .nb {
+    background: #ff0000;
+    color: #ffff00;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 8px;
+    border: 4px dashed #ffff00;
+    margin: 0 -12px 20px;
+    font-size: clamp(16px, 3.6vw, 24px);
+    text-transform: uppercase;
+  }
+  .blink { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { visibility: hidden; } }
+
+  .side {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #ffffcc;
+    border: 6px ridge #ff9900;
+    padding: 16px 20px 24px;
+    box-shadow: 8px 8px 0 #000080;
+  }
+  marquee, .marquee {
+    display: block;
+    background: #000080;
+    color: #00ff00;
+    font-weight: bold;
+    padding: 4px 0;
+    border: 2px inset #c0c0c0;
+    font-size: 18px;
+  }
+
+  /* WordArt */
+  .wordart {
+    font-family: var(--comic); font-weight: bold;
+    text-align: center;
+    margin: 18px 0 6px;
+    line-height: 1;
+    perspective: 400px;
+  }
+  .wordart span {
+    display: inline-block;
+    font-size: clamp(44px, 11vw, 96px);
+    background: linear-gradient(180deg, #ff0000 0%, #ff9900 20%, #ffff00 40%, #00cc00 60%, #0066ff 80%, #9900cc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 2px #000;
+    filter: drop-shadow(4px 4px 0 #666) drop-shadow(2px 2px 0 #999);
+    transform: rotateX(18deg) skewX(-8deg);
+  }
+  .wordart.small span {
+    font-size: clamp(30px, 7vw, 60px);
+    background: linear-gradient(90deg, #0000ff, #00ffff, #0000ff);
+    -webkit-background-clip: text; background-clip: text;
+    transform: skewY(-4deg);
+  }
+  .forty {
+    text-align: center;
+    font-size: clamp(90px, 26vw, 200px);
+    font-family: var(--comic); font-weight: bold;
+    color: #ff00ff;
+    text-shadow: 3px 3px 0 #ffff00, 6px 6px 0 #00ffff, 9px 9px 0 #000080;
+    margin: 0;
+    line-height: 1;
+    animation: wobble 2s ease-in-out infinite;
+  }
+  @keyframes wobble { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+
+  p { font-size: clamp(18px, 4vw, 22px); line-height: 1.5; }
+  .velkommen {
+    text-align: center;
+    font-size: clamp(28px, 7vw, 44px);
+    font-weight: bold;
+    color: #cc0000;
+  }
+  hr.regnbue {
+    border: 0; height: 10px; margin: 20px 0;
+    background: repeating-linear-gradient(90deg, red 0 20px, orange 20px 40px, yellow 40px 60px, lime 60px 80px, blue 80px 100px, purple 100px 120px);
+  }
+  .konstruksjon {
+    display: flex; align-items: center; gap: 12px; justify-content: center;
+    background: repeating-linear-gradient(45deg, #ffcc00 0 16px, #000 16px 32px);
+    padding: 8px; margin: 20px 0;
+  }
+  .konstruksjon div {
+    background: #ffcc00; color: #000; font-weight: bold;
+    padding: 6px 12px; border: 2px solid #000; text-align: center;
+  }
+  .ballonger { text-align: center; font-size: 40px; letter-spacing: 6px; }
+  .ballonger span { display: inline-block; animation: hopp 1.4s ease-in-out infinite; }
+  .ballonger span:nth-child(2n) { animation-delay: .3s; }
+  .ballonger span:nth-child(3n) { animation-delay: .6s; }
+  @keyframes hopp { 50% { transform: translateY(-10px); } }
+  .teller { text-align: center; font-size: 14px; margin-top: 20px; }
+  .teller b {
+    font-family: "Courier New", monospace; background: #000; color: #00ff00;
+    padding: 2px 6px; letter-spacing: 3px; border: 2px inset #808080;
+  }
+  .footer { text-align: center; font-size: 13px; color: #555; margin-top: 10px; }
+  @media (prefers-reduced-motion: reduce) {
+    .blink, .forty, .ballonger span { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="nb">
+    <span class="blink">⚠️ NB! NB! ⚠️</span><br>
+    Dette er en overraskelsesbursdag!<br>
+    Ikke fortell Joakim Marvin om dette!!!
+  </div>
+
+  <div class="side">
+    <marquee scrollamount="6">🎉 HURRA! 🎂 Joakim blir 40! 🎈 Velkommen til fest! 🎉 Husk: IKKE si noe til Joakim! 🤫 🎉</marquee>
+
+    <div class="ballonger"><span>🎈</span><span>🎈</span><span>🎂</span><span>🎈</span><span>🎈</span></div>
+
+    <h1 class="wordart"><span>Joakim blir</span></h1>
+    <p class="forty">40</p>
+
+    <hr class="regnbue">
+
+    <p>Det skal feires en bursdag! 🥳</p>
+    <p>Har du fått denne linken, er du <b><u>invitert</u></b> på dagen!</p>
+    <p>Mer informasjon kommer på denne siden – så følg med! 👀</p>
+
+    <div class="konstruksjon"><div>🚧 Siden er under konstruksjon 🚧<br>Mer info kommer snart!</div></div>
+
+    <h2 class="wordart small"><span>Velkommen!</span></h2>
+
+    <hr class="regnbue">
+
+    <div class="teller">Du er besøkende nr. <b>000040</b></div>
+    <div class="footer">joachimblir40.no · Best i Netscape Navigator 4.0 · 800×600</div>
+  </div>
+</body>
+</html>
