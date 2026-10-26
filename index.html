@@ -171,7 +171,7 @@
 
     <hr class="regnbue">
 
-    <div class="teller">Du er besøkende nr. <b>000040</b></div>
+    <div class="teller">Du er besøkende nr. <b id="teller">------</b></div>
     <div class="footer">joachimblir40.no · Best i Netscape Navigator 4.0 · 800×600</div>
   </div>
 <script>
@@ -184,6 +184,17 @@
     else if (dager === 1) el.innerHTML = "Det er <b>i morgen</b>!";
     else if (dager === 0) el.innerHTML = "Det er <b>i dag</b>! 🎉";
   })();
+</script>
+<script>
+  // Teller hver eneste sidevisning (ikke unike besøkende) via gratis Abacus-teller
+  fetch("https://abacus.jasoncameron.dev/hit/joachimblir40-no/besok")
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (typeof d.value === "number") {
+        document.getElementById("teller").textContent = String(d.value).padStart(6, "0");
+      }
+    })
+    .catch(function () {});
 </script>
 </body>
 </html>
